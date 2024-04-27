@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blogs</title>
+        <style>
+            .blog{
+                text-decoration: none;
+                color: black;
+                border: 1px soild yellowgreen;
+            }
+            .blog:hover{
+                cursor: pointer;
+                padding: 1rem 1rem;
+                transition: all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include ('navbar.ejs') %>
+        <% for (let blog of blogs) { %>
+            <a class="blog" href="/blog/<%= blog.id %>">
+                <h2><%= blog.title %></h2>
+                <p><%= blog.content %></p>
+            </a>
+        <% } %>
+    </body>
+</html>

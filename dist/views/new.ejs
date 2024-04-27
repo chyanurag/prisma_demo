@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add a new blog</title>
+    </head>
+    <body>
+        <%- include ('navbar.ejs') %>
+        <% if(typeof error !== 'undefined') { %>
+        <p style="color:red;"><%= error %></p>
+        <% } %>
+        <form action="/new" method="POST">
+            <input type="text" name="title"><br/>
+            <textarea name="content"></textarea><br/>
+            <button>Create Post</button>
+        </form>
+    </body>
+</html>
